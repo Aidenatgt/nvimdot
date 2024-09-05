@@ -1,0 +1,7 @@
+require "keymaps"
+require "packersetup"
+require "options"
+require "colorscheme"
+require "completion"
+require "lsp"
+require "treesitter"
