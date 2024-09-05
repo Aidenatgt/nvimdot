@@ -1,7 +1,4 @@
-require "keymaps"
-require "packersetup"
-require "options"
-require "colorscheme"
-require "completion"
-require "lsp"
-require "treesitter"
+require("core.mappings")
+require("core.plugins")
+require("core.colorscheme")
+require("core.options")
