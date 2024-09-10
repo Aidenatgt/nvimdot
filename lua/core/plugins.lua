@@ -13,6 +13,7 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
   use 'Aidenatgt/au_theme.nvim'
   use 'rktjmp/lush.nvim'
   use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
@@ -35,11 +36,14 @@ return require('packer').startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
+  -- use "Pocco81/auto-save.nvim"
+
   use 'fedepujol/move.nvim'
+  use 'numToStr/Comment.nvim'
+
   use 'williamboman/mason.nvim'
   use 'mrcjkb/rustaceanvim'
   use 'saecki/crates.nvim'
-  use 'numToStr/Comment.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

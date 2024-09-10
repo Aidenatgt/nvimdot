@@ -1,15 +1,14 @@
-local lspconfig = require'lspconfig'
-
-lspconfig.pyright.setup{}
-lspconfig.asm_lsp.setup{}
-lspconfig.clangd.setup{}
-lspconfig.css_variables.setup{}
-lspconfig.cssls.setup{}
-lspconfig.html.setup{}
-lspconfig.java_language_server.setup{}
-lspconfig.htmx.setup{}
-lspconfig.jsonls.setup{}
-lspconfig.ltex.setup{
+local lspconfig = require 'lspconfig'
+lspconfig.pyright.setup {}
+lspconfig.asm_lsp.setup {}
+lspconfig.clangd.setup {}
+lspconfig.css_variables.setup {}
+lspconfig.cssls.setup {}
+lspconfig.html.setup {}
+lspconfig.java_language_server.setup {}
+lspconfig.htmx.setup {}
+lspconfig.jsonls.setup {}
+lspconfig.ltex.setup {
   {
     settings = {
       ltex = {
@@ -18,8 +17,11 @@ lspconfig.ltex.setup{
     },
   }
 }
-lspconfig.lua_ls.setup{}
-lspconfig.r_language_server.setup{}
-lspconfig.ts_ls.setup{}
-lspconfig.yamlls.setup{}
-lspconfig.zls.setup{}
+lspconfig.lua_ls.setup {}
+lspconfig.r_language_server.setup {}
+lspconfig.ts_ls.setup {}
+lspconfig.yamlls.setup {}
+lspconfig.zls.setup {}
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
