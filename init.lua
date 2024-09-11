@@ -1,5 +1,5 @@
 require "core.lazy"
-require "core.options"
 require "core.colorscheme"
 require "core.mason"
 require "core.lspconfig"
+require "core.options"

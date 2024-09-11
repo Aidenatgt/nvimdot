@@ -27,6 +27,8 @@ local plugins = {
   { 'nvim-tree/nvim-tree.lua' },
   { 'nvim-treesitter/nvim-treesitter', opts = { run = ':TSUpdate' } },
   { 'akinsho/bufferline.nvim' },
+  { 'fedepujol/move.nvim' },
+  { 'numToStr/Comment.nvim' },
 }
 
 return plugins

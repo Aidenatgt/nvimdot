@@ -28,3 +28,25 @@ keymap("n", "<C-l>", "<C-w>l")
 keymap("n", "<C-k>", "<C-w>k")
 keymap("n", "<C-j>", "<C-w>j")
 keymap("n", "<C-h>", "<C-w>h")
+
+-- Move selections
+keymap('n', '<S-j>', ':MoveLine(1)<CR>')
+keymap('n', '<S-k>', ':MoveLine(-1)<CR>')
+keymap('n', '<S-h>', ':MoveHChar(-1)<CR>')
+keymap('n', '<S-l>', ':MoveHChar(1)<CR>')
+keymap('v', '<S-j>', ':MoveBlock(1)<CR>')
+keymap('v', '<S-k>', ':MoveBlock(-1)<CR>')
+keymap('v', '<S-h>', ':MoveHBlock(-1)<CR>')
+keymap('v', '<S-l>', ':MoveHBlock(1)<CR>')
+
+-- Comments
+require("Comment").setup({
+  toggler = {
+    line = "<leader>/",
+    block = "<leader>.",
+  },
+  opleader = {
+    line = "<leader>/",
+    block = "<leader>.",
+  }
+})

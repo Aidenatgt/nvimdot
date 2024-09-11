@@ -84,3 +84,9 @@ require("nvim-tree").setup({
 require('rust-tools').setup()
 
 require 'core.completion'
+
+require 'move'.setup {
+  char = {
+    enable = true
+  }
+}
