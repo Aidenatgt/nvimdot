@@ -1,0 +1,5 @@
+{
+  "au_theme.nvim": { "branch": "main", "commit": "ef9e8af1b91d619187c474f8151d3da05b7fe09d" },
+  "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
+  "lush.nvim": { "branch": "main", "commit": "45a79ec4acb5af783a6a29673a999ce37f00497e" }
+}
