@@ -37,12 +37,13 @@ return require('packer').startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
   -- use "Pocco81/auto-save.nvim"
+use 'simrat39/rust-tools.nvim'
 
   use 'fedepujol/move.nvim'
   use 'numToStr/Comment.nvim'
 
   use 'williamboman/mason.nvim'
-  use 'mrcjkb/rustaceanvim'
+  --[[ use 'mrcjkb/rustaceanvim' ]]
   use 'saecki/crates.nvim'
 
   if packer_bootstrap then
