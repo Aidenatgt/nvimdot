@@ -7,4 +7,5 @@ return {
   lang('asm_lsp', 'asm_lsp'),
   --  lang('java_language_server', 'java_language_server'),
   lang('zls', 'zls'),
+  lang('clangd', 'clangd'),
 }
