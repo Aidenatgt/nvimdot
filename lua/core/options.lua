@@ -90,3 +90,11 @@ require 'move'.setup {
     enable = true
   }
 }
+
+require('toggleterm').setup()
+
+require('cheatsheet').setup({
+  bundled_cheatsheets = {
+    enabled = { "default" }
+  }
+})

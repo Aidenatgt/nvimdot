@@ -20,15 +20,16 @@ local plugins = {
   { "rafamadriz/friendly-snippets" },
 
   -- Editor
-  {
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  },
+  { 'nvim-lua/plenary.nvim' },
+  { 'nvim-telescope/telescope.nvim' },
+  { 'nvim-lua/popup.nvim' },
+  { 'sudormrfbin/cheatsheet.nvim' },
   { 'nvim-tree/nvim-tree.lua' },
-  { 'nvim-treesitter/nvim-treesitter', opts = { run = ':TSUpdate' } },
+  { 'nvim-treesitter/nvim-treesitter',  opts = { run = ':TSUpdate' } },
   { 'akinsho/bufferline.nvim' },
   { 'fedepujol/move.nvim' },
   { 'numToStr/Comment.nvim' },
+  { 'akinsho/toggleterm.nvim',          version = "*",               config = true }
 }
 
 return plugins

@@ -1,0 +1,42 @@
+## Comments @comment @comments
+Comment out the whole lines | <leader>/
+Comment out a block | <leader>.
+
+## Navigation
+Go to next buffer | <Tab>
+Go to previous buffer | <S-Tab>
+Close current buffer | <leader>x
+Find and open a file | <leader>f
+Find and go to a buffer | <leader><Tab>
+Toggle file tree. | <leader>d
+Walk to the left pane | <C-l>
+Walk to the upper pane | <C-k>
+Walk to the lower pane | <C-j>
+Walk to the right pane | <C-h>
+
+## LSP
+List issues in the current buffer | <leader>q
+List available code actions | <leader>a
+
+## Editor
+Decrement the indentation of a line | <
+Increment the indentation of a line | >
+Decrement the indentation of a selection | <
+Increment the indentation of a selection | >
+Move the current line down | <S-j>
+Move the current line up | <S-k>
+Move the character under the cursor right | <S-h>
+Move the character under the cursor left | <S-l>
+Move the current selection down | <S-j>
+Move the current selection up | <S-k>
+Move the current selection right | <S-h>
+Move the current selection left | <S-l>
+
+## Terminal
+Open a horizontal terminal | <leader>t
+Enter visual mode within a terminal | <esc>
+Navigate right from within a terminal | <C-h>
+Navigate down from within a terminal | <C-j>
+Navigate up from within a terminal | <C-k>
+Navigate left from within a terminal | <C-l>
+Walk to a different pane from within a terminal | <C-w>

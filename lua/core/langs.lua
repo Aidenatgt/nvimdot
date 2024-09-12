@@ -1,11 +1,12 @@
-local lang = function(mason_str, lspconfig_str)
-  return { mason = mason_str, lspconfig = lspconfig_str }
+-- If the name for the mason package and lspconfig is the same, a single string will do.
+local lang = function(lspconfig_str, mason_str)
+  return { mason = mason_str or lspconfig_str, lspconfig = lspconfig_str }
 end
+
 return {
-  lang('lua_ls', 'lua_ls'),
-  lang('pyright', 'pyright'),
-  lang('asm_lsp', 'asm_lsp'),
-  --  lang('java_language_server', 'java_language_server'),
-  lang('zls', 'zls'),
-  lang('clangd', 'clangd'),
+  lang('lua_ls'),
+  lang('pyright'),
+  lang('asm_lsp'),
+  lang('zls'),
+  lang('clangd'),
 }
