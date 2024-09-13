@@ -14,6 +14,7 @@ local builtin = require 'telescope.builtin'
 keymap("n", "<leader>f", builtin.find_files, "Find and open a file")     -- Fuzzy find file
 keymap("n", "<leader><Tab>", builtin.buffers, "Find and go to a buffer") -- Fuzzy find buffer
 
+keymap("n", "<leader>s", "<CMD>NoiceDismiss<CR>", "Dismiss a Noice message")
 keymap("n", "<leader>d", "<CMD>Neotree<CR>", "Toggle file tree.")        -- Toggle file tree
 keymap("n", "-", "<CMD>Oil<CR>", "Open parent directory in oil")
 

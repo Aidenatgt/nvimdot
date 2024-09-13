@@ -4,10 +4,57 @@ local plugins = {
   { "Aidenatgt/au_theme.nvim" },
 
   -- Language
-  { 'neovim/nvim-lspconfig' },
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  { 'simrat39/rust-tools.nvim' },
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      local lsp_config = require 'lspconfig'
+      local langs = require 'core.langs'
+
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      for _, v in ipairs(langs) do
+        lsp_config[v.lspconfig].setup { capabilities = capabilities, settings = v.settings }
+      end
+    end
+  },
+  {
+    'williamboman/mason.nvim',
+    config = function()
+      require('mason').setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      })
+    end
+  },
+  {
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+      local map = function(tbl, f)
+        local t = {}
+        for k, v in pairs(tbl) do
+          t[k] = f(v)
+        end
+        return t
+      end
+
+      require('mason-lspconfig').setup({
+        ensure_installed = map(require('core.langs'), function(lang)
+          return lang.mason
+        end)
+      })
+    end
+  },
+  {
+    'simrat39/rust-tools.nvim',
+    config = function()
+      require('rust-tools').setup()
+    end
+  },
   { 'nvim-lua/plenary.nvim' },
   { 'mfussenegger/nvim-dap' },
   { 'hrsh7th/cmp-nvim-lsp' },
@@ -64,7 +111,16 @@ local plugins = {
     }
   },
   { 'nvim-lua/popup.nvim' },
-  { 'sudormrfbin/cheatsheet.nvim' },
+  {
+    'sudormrfbin/cheatsheet.nvim',
+    config = function()
+      require('cheatsheet').setup({
+        bundled_cheatsheets = {
+          enabled = { "default" }
+        }
+      })
+    end
+  },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -88,9 +144,24 @@ local plugins = {
   },
   { 'nvim-treesitter/nvim-treesitter', opts = { run = ':TSUpdate' } },
   { 'akinsho/bufferline.nvim' },
-  { 'fedepujol/move.nvim' },
+  {
+    'fedepujol/move.nvim',
+    config = function()
+      require 'move'.setup {
+        char = {
+          enable = true
+        }
+      }
+    end
+  },
   { 'numToStr/Comment.nvim' },
-  { 'akinsho/toggleterm.nvim',         version = "*",               config = true }
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function()
+      require('toggleterm').setup()
+    end
+  }
 }
 
 return plugins

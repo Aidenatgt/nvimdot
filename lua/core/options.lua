@@ -58,21 +58,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 require "core.keymap"
-
-require('rust-tools').setup()
-
 require 'core.completion'
-
-require 'move'.setup {
-  char = {
-    enable = true
-  }
-}
-
-require('toggleterm').setup()
-
-require('cheatsheet').setup({
-  bundled_cheatsheets = {
-    enabled = { "default" }
-  }
-})
