@@ -59,28 +59,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 require "core.keymap"
 
-local function my_on_attach(bufnr)
-  local api = require "nvim-tree.api"
-  api.config.mappings.default_on_attach(bufnr)
-  vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent)
-  vim.keymap.set('n', '?', api.tree.toggle_help)
-end
-require("nvim-tree").setup({
-  sort = {
-    sorter = "case_sensitive",
-  },
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-  on_attach = my_on_attach,
-})
-
 require('rust-tools').setup()
 
 require 'core.completion'

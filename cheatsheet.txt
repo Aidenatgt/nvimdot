@@ -9,6 +9,7 @@ Close current buffer | <leader>x
 Find and open a file | <leader>f
 Find and go to a buffer | <leader><Tab>
 Toggle file tree. | <leader>d
+Open parent directory (Oil). | -
 Walk to the left pane | <C-l>
 Walk to the upper pane | <C-k>
 Walk to the lower pane | <C-j>

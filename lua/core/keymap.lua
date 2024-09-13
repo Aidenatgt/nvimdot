@@ -11,10 +11,11 @@ keymap("n", "<S-Tab>", ":bp<CR>", "Go to previous buffer")  -- Previous buffer
 keymap("n", "<leader>x", ":bd<CR>", "Close current buffer") -- Close buffer
 
 local builtin = require 'telescope.builtin'
-keymap("n", "<leader>f", builtin.find_files, "Find and open a file")                                      -- Fuzzy find file
-keymap("n", "<leader><Tab>", builtin.buffers, "Find and go to a buffer")                                  -- Fuzzy find buffer
+keymap("n", "<leader>f", builtin.find_files, "Find and open a file")     -- Fuzzy find file
+keymap("n", "<leader><Tab>", builtin.buffers, "Find and go to a buffer") -- Fuzzy find buffer
 
-keymap("n", "<leader>d", ":NvimTreeToggle<CR>", "Toggle file tree.")                                      -- Toggle file tree
+keymap("n", "<leader>d", "<CMD>Neotree<CR>", "Toggle file tree.")        -- Toggle file tree
+keymap("n", "-", "<CMD>Oil<CR>", "Open parent directory in oil")
 
 keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", "List issues in the current buffer") -- List issues
 keymap("n", "<leader>a", "<cmd> lua vim.lsp.buf.code_action()<CR>", "List available code actions")        -- List available code actions
@@ -22,8 +23,8 @@ keymap("n", "<leader>a", "<cmd> lua vim.lsp.buf.code_action()<CR>", "List availa
 -- Indenetation
 keymap("n", "<", "<S-v><", "Decrement the indentation of a line")
 keymap("n", ">", "<S-v>>", "Increment the indentation of a line")
-keymap("v", "<", "<<S-v>", "Decrement the indentation of a selection")
-keymap("v", ">", "><S-v>", "Increment the indentation of a selection")
+keymap("v", "<", "<gv", "Decrement the indentation of a selection")
+keymap("v", ">", ">gv", "Increment the indentation of a selection")
 
 -- Pane navigation
 keymap("n", "<C-l>", "<C-w>l", "Walk to the left pane")
