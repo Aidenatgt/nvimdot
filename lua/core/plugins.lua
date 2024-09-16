@@ -67,6 +67,10 @@ local plugins = {
   { "rafamadriz/friendly-snippets" },
 
   -- Editor
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+  },
   { 'nvim-lua/plenary.nvim' },
   { 'nvim-telescope/telescope.nvim' },
   {
@@ -161,7 +165,19 @@ local plugins = {
     config = function()
       require('toggleterm').setup()
     end
-  }
+  },
+  {
+    "andrewferrier/wrapping.nvim",
+    config = function()
+      require("wrapping").setup()
+    end
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require("lualine").setup()
+    end
+  },
 }
 
 return plugins

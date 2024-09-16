@@ -15,4 +15,5 @@ return {
   lang('asm_lsp'),
   lang('zls'),
   lang('clangd'),
+  lang('texlab'),
 }

@@ -13,9 +13,10 @@ keymap("n", "<leader>x", ":bd<CR>", "Close current buffer") -- Close buffer
 local builtin = require 'telescope.builtin'
 keymap("n", "<leader>f", builtin.find_files, "Find and open a file")     -- Fuzzy find file
 keymap("n", "<leader><Tab>", builtin.buffers, "Find and go to a buffer") -- Fuzzy find buffer
+keymap("n", "<leader>g", builtin.live_grep, "Find a pattern in a file (live grep)")
 
 keymap("n", "<leader>s", "<CMD>NoiceDismiss<CR>", "Dismiss a Noice message")
-keymap("n", "<leader>d", "<CMD>Neotree<CR>", "Toggle file tree.")        -- Toggle file tree
+keymap("n", "<leader>d", "<CMD>Neotree<CR>", "Toggle file tree.") -- Toggle file tree
 keymap("n", "-", "<CMD>Oil<CR>", "Open parent directory in oil")
 
 keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", "List issues in the current buffer") -- List issues
