@@ -1,7 +1,6 @@
 local o = vim.opt
 
 o.backup = false
-o.clipboard = "unnamedplus"
 o.cmdheight = 2
 o.fileencoding = "utf-8"
 o.hlsearch = false
@@ -18,7 +17,7 @@ o.shiftwidth = 2
 o.tabstop = 2
 o.cursorline = true
 o.number = true
-o.relativenumber = false
+o.relativenumber = true
 o.numberwidth = 4
 o.signcolumn = "yes"
 o.wrap = false
@@ -27,6 +26,21 @@ o.sidescrolloff = 8
 o.guifont = "monospace"
 o.autochdir = false
 o.ruler = true
+
+o.clipboard = "unnamedplus"
+
+vim.g.clipboard = {
+  name = "wl-clipboard",
+  copy = {
+    ["+"] = "wl-copy --foreground --type text/plain",
+    ["*"] = "wl-copy --primary --foreground --type text/plain",
+  },
+  paste = {
+    ["+"] = "wl-paste --no-newline",
+    ["*"] = "wl-paste --no-newline --primary",
+  },
+  cache_enabled = 1,
+}
 
 
 vim.cmd [[
@@ -45,39 +59,26 @@ augroup END
 ]]
 
 -- Format on save
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("lsp", { clear = true }),
-  callback = function(args)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = args.buf,
-      callback = function()
-        vim.lsp.buf.format { async = false, id = args.data.client_id }
-      end,
-    })
-  end
-})
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+--   callback = function(args)
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       buffer = args.buf,
+--       callback = function()
+--         vim.lsp.buf.format { async = false, id = args.data.client_id }
+--       end,
+--     })
+--   end
+-- })
 
 local logo = [[
-=================     ===============     ===============   ========  ========
-\\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //
-||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||
-|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||
-||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||
-|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\ . . . . ||
-||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\_ . .|. .||
-|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\ `-_/| . ||
-||_-' ||  .|/    || ||    \|.  || `-_|| ||_-' ||  .|/    || ||   | \  / |-_.||
-||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \  / |  `||
-||    `'         || ||         `'    || ||    `'         || ||   | \  / |   ||
-||            .===' `===.         .==='.`===.         .===' /==. |  \/  |   ||
-||         .=='   \_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \/  |   ||
-||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \/  |   ||
-||   .=='    _-'          '-__\._-'         '-_./__-'         `' |. /|  |   ||
-||.=='    _-'                                                     `' |  /==.||
-=='    _-'                        N E O V I M                         \/   `==
-\   _-'                                                                `-_   /
- `''                                                                      ``'
- ]]
+ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+]]
 
 logo = string.rep("\n", 8) .. logo .. "\n\n"
 
@@ -101,5 +102,8 @@ require("dashboard").setup {
   }
 }
 
+require("flutter-tools").setup {}
+
 require "core.keymap"
 require 'core.completion'
+require 'core.chat_gpt'

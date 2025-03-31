@@ -64,3 +64,5 @@ keymap('t', '<C-j>', [[<Cmd>wincmd j<CR>]], "Navigate down from within a termina
 keymap('t', '<C-k>', [[<Cmd>wincmd k<CR>]], "Navigate up from within a terminal")
 keymap('t', '<C-l>', [[<Cmd>wincmd l<CR>]], "Navigate left from within a terminal")
 keymap('t', '<C-w>', [[<C-\><C-n><C-w>]], "Walk to a different pane from within a terminal")
+
+vim.api.nvim_create_user_command("Reload", "source $MYVIMRC", {})

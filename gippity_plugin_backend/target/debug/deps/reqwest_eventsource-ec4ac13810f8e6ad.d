@@ -1,0 +1,9 @@
+/home/aiden/.config/nvim/gippity_plugin_backend/target/debug/deps/libreqwest_eventsource-ec4ac13810f8e6ad.rmeta: /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/lib.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/error.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/event_source.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/reqwest_ext.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/retry.rs
+
+/home/aiden/.config/nvim/gippity_plugin_backend/target/debug/deps/reqwest_eventsource-ec4ac13810f8e6ad.d: /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/lib.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/error.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/event_source.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/reqwest_ext.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/retry.rs
+
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/lib.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/error.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/event_source.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/reqwest_ext.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/reqwest-eventsource-0.6.0/src/retry.rs:

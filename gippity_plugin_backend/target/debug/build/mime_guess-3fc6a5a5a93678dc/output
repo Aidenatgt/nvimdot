@@ -1,0 +1,1 @@
+cargo:rustc-env=MIME_TYPES_GENERATED_PATH=/home/aiden/.config/nvim/gippity_plugin_backend/target/debug/build/mime_guess-3fc6a5a5a93678dc/out/mime_types_generated.rs

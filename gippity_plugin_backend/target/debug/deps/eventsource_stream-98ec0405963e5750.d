@@ -1,0 +1,10 @@
+/home/aiden/.config/nvim/gippity_plugin_backend/target/debug/deps/libeventsource_stream-98ec0405963e5750.rmeta: /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/lib.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/event.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/event_stream.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/parser.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/traits.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/utf8_stream.rs
+
+/home/aiden/.config/nvim/gippity_plugin_backend/target/debug/deps/eventsource_stream-98ec0405963e5750.d: /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/lib.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/event.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/event_stream.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/parser.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/traits.rs /home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/utf8_stream.rs
+
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/lib.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/event.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/event_stream.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/parser.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/traits.rs:
+/home/aiden/.cargo/registry/src/index.crates.io-6f17d22bba15001f/eventsource-stream-0.2.3/src/utf8_stream.rs:

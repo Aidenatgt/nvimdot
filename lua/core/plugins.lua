@@ -49,14 +49,23 @@ local plugins = {
       })
     end
   },
+  { 'neoclide/coc.nvim',           branch = 'release' },
   {
     'simrat39/rust-tools.nvim',
     config = function()
       require('rust-tools').setup()
     end
   },
+  { 'nvim-jdtls',
+    config = function()
+      local config = {
+          cmd = {'/path/to/jdt-language-server/bin/jdtls'},
+          root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
+      }
+      require('jdtls').start_or_attach(config)
+    end
+  },
   { 'nvim-lua/plenary.nvim' },
-  { 'mfussenegger/nvim-dap' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },
   { 'hrsh7th/cmp-path' },
@@ -65,7 +74,48 @@ local plugins = {
   { "saadparwaiz1/cmp_luasnip" },
   { "L3MON4D3/LuaSnip" },
   { "rafamadriz/friendly-snippets" },
+  {
+    'nvim-flutter/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim'
+    },
+    config = true,
+  },
 
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      require("dap")
+    end
+  },
+  {
+    "jbyuki/one-small-step-for-vimkind",
+    requires = { "mfussenegger/nvim-dap" },
+    config = function()
+      local dap = require("dap")
+      dap.configurations.lua = {
+        {
+          type = "nlua",
+          request = "attach",
+          name = "Attach to Neovim",
+          host = function()
+            return "127.0.0.1"
+          end,
+          port = 54231,
+        },
+      }
+
+      dap.adapters.nlua = function(callback, config)
+        callback({
+          type = "server",
+          host = config.host or "127.0.0.1",
+          port = config.port or 54231,
+        })
+      end
+    end,
+  },
   -- Editor
   {
     'nvimdev/dashboard-nvim',
@@ -113,6 +163,10 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
+  },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
   },
   { 'nvim-lua/popup.nvim' },
   {
