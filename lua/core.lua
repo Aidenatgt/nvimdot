@@ -1,0 +1,10 @@
+require("colorscheme")
+require("plugins")
+package.loaded["lsp"] = nil
+require("lsp")
+require("options")
+require("keymaps")
+require("completion")
+require("autocmds")
+require("treesitter")
+vim.notify("NeoVim loaded successfully")
