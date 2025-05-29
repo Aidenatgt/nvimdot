@@ -58,6 +58,17 @@ augroup optimizable_highlighting
 augroup END
 ]]
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    local config = {
+        cmd = {'/usr/share/java/jdtls/bin/jdtls'},
+        root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
+    }
+    require('jdtls').start_or_attach(config)
+  end
+})
+
 -- Format on save
 -- vim.api.nvim_create_autocmd("LspAttach", {
 --   group = vim.api.nvim_create_augroup("lsp", { clear = true }),

@@ -4,7 +4,7 @@ local lang = function(lspconfig_str, mason_str, settings)
 end
 
 return {
-  lang('lua_ls', 'lua-language-server', {
+  lang('lua_ls', nil, {
     Lua = {
       diagnostics = {
         globals = { 'vim' }
@@ -20,8 +20,9 @@ return {
   lang('ruby_lsp', nil, {
     filetypes = { 'ruby' }
   }),             -- Ruby Language Server
+  lang('html'),
+  lang('cssls'),
+  lang('ts_ls'),
+  lang('eslint'),
   lang('dartls'), -- Dart Language Server
-  lang('java_language_server', nil, {
-    cmd = {"/home/aiden/.local/share/nvim/mason/packages/java-language-server/dist/lang_server_linux.sh"},
-  }),
 }

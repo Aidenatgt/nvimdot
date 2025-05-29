@@ -6,6 +6,7 @@ local plugins = {
   -- Language
   {
     'neovim/nvim-lspconfig',
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lsp_config = require 'lspconfig'
       local langs = require 'core.langs'
@@ -15,12 +16,13 @@ local plugins = {
       for _, v in ipairs(langs) do
         lsp_config[v.lspconfig].setup { capabilities = capabilities, settings = v.settings }
       end
-    end
+    end,
   },
   {
     'williamboman/mason.nvim',
     config = function()
       require('mason').setup({
+        build = ":MasonUpdate",
         ui = {
           icons = {
             package_installed = "✓",
@@ -56,15 +58,7 @@ local plugins = {
       require('rust-tools').setup()
     end
   },
-  { 'nvim-jdtls',
-    config = function()
-      local config = {
-          cmd = {'/path/to/jdt-language-server/bin/jdtls'},
-          root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
-      }
-      require('jdtls').start_or_attach(config)
-    end
-  },
+  { 'mfussenegger/nvim-jdtls' },
   { 'nvim-lua/plenary.nvim' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },
