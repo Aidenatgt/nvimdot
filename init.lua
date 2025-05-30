@@ -1,3 +1,2 @@
-require "core.lazy"
-require "core.colorscheme"
-require "core.options"
+vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
+require("core")

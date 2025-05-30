@@ -3,13 +3,14 @@ local lspconfig = require("lspconfig")
 -- Add your servers here
 local servers = {
   lua_ls = {
-	  	settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = { "vim" },
+        },
       },
     },
-  },},
+  },
   rust_analyzer = {},
   clangd = {},
   pyright = {},
@@ -19,6 +20,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = vim.tbl_keys(servers),
   automatic_installation = true,
+  handlers = {},
 })
 
 
@@ -27,7 +29,7 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, { noremap = true, silent = true })
   end
 
-  buf_map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+  buf_map("n", "gd", vim.lsp.buf.definition())
   buf_map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
   buf_map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
   buf_map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")

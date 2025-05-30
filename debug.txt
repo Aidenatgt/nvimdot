@@ -1,6 +1,0 @@
-===
-/home/aiden/.config/nvim/chatgpt_handler.py ||| edit ||| Break this into seperate lines for each condition (python) |||   local csrow, cerow, content = selection[1], selection[2], selection[3]
-===
-===
-/home/aiden/.config/nvim/chatgpt_handler.py ||| chat ||| Hello what poppin ||| 
-===

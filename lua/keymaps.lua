@@ -1,3 +1,7 @@
+--
+-- LSP KEYMAPS ARE IN `lsp.lua`
+--
+
 vim.g.mapleader = " "
 
 function bind(mode, key, value, description)

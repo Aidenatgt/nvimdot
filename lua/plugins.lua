@@ -8,12 +8,19 @@ require("lazy").setup({
   },
 {
   "rcarriga/nvim-notify",
+  config = function()
+    vim.notify = require("notify")
+  end,
+  priority = 1000, -- ensure this loads before others
 },
 {
   "folke/noice.nvim",
   dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
   config = function ()
 require("noice").setup({
+  notify = {
+    enabled = false
+  },
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
@@ -109,5 +116,11 @@ end,
     config = function ()
       require("gitsigns").setup()
     end
+  },
+  {
+    "tpope/vim-fugitive",
+  },
+  {
+    "sindrets/diffview.nvim"
   }
 })
