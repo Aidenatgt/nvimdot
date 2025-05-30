@@ -13,7 +13,20 @@ local servers = {
   },
   rust_analyzer = {},
   clangd = {},
-  pyright = {},
+  basedpyright = {},
+  html = {},
+  cssls = {},
+  ts_ls = {},
+  eslint = {},
+  dartls = {},
+  asm_lsp = {},
+  ruby_lsp = {
+    filetypes = {
+      "ruby",
+    }
+  },
+  texlab = {},
+  zls = {},
 }
 
 require("mason").setup()
