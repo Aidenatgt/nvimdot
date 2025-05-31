@@ -4,8 +4,10 @@
 
 vim.g.mapleader = " "
 
-function bind(mode, key, value, description)
-	vim.keymap.set(mode, key, value, { desc = description })
+function bind(mode, key, value, description, config)
+  config = config or {}
+  config.desc = description
+  vim.keymap.set(mode, key, value, config)
 end
 
 bind("n", "<leader>x", "<CMD>q<CR>", "Close the current buffer")
@@ -20,3 +22,9 @@ bind("n", "<leader>fb", "<CMD>Telescope buffers<CR>", "Search buffers with Teles
 bind("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", "Telescope help")
 
 bind("n", "<leader>h", ":nohlsearch<CR>", "Clear highlighted phrases")
+
+-- Indentation
+bind("n", "<C-Tab>", ">>", "Indent the current line", { noremap = true, silent = true })
+bind("v", "<C-Tab>", ">gv", "Indent the current selection", { noremap = true, silent = true })
+bind("n", "<C-S-Tab>", "<<", "Dedent the current line", { noremap = true, silent = true })
+bind("v", "<C-S-Tab>", "<gv", "Dedent the current selection", { noremap = true, silent = true })
