@@ -21,6 +21,12 @@ bind("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", "Live grep with Telescop
 bind("n", "<leader>fb", "<CMD>Telescope buffers<CR>", "Search buffers with Telescope")
 bind("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", "Telescope help")
 
+-- Change buffers
+bind("n", "<Tab>", ":bn<CR>", "Move to the next buffer")
+bind("n", "<S-Tab>", ":bp<CR>", "Move to the previous buffer")
+bind("v", "<Tab>", ":bn<CR>", "Move to the next buffer")
+bind("v", "<S-Tab>", ":bp<CR>", "Move to the previous buffer")
+
 bind("n", "<leader>h", ":nohlsearch<CR>", "Clear highlighted phrases")
 
 -- Indentation
