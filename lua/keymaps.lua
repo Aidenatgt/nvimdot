@@ -10,7 +10,17 @@ function bind(mode, key, value, description, config)
   vim.keymap.set(mode, key, value, config)
 end
 
-bind("n", "<leader>x", "<CMD>q<CR>", "Close the current buffer")
+bind("n", "<leader>x", "<CMD>bd<CR>", "Close the current buffer")
+
+function toggle_wrap()
+  local wrap = vim.wo.wrap
+  vim.wo.wrap = not wrap
+  vim.wo.linebreak = not wrap
+  vim.wo.breakindent = not wrap
+  vim.notify("Soft wrap: " .. (vim.wo.wrap and "ON" or "OFF"))
+end
+
+bind("n", "<leader>w", toggle_wrap, "Toggle soft wrap")
 
 -- Open Oil
 bind("n", "-", "<CMD>Oil<CR>", "Open parent directory with Oil")
